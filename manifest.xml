@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+    <Id>93bt1p123e</Id>
+    <Secret>9C645DDBA19C71BAD1204DA4DAA7A0B9</Secret>
+    <Privileges>
+			  <Privilege>
+				  <Name>ADDRESSBOOK</Name>
+				  <GroupId>devicegr01</GroupId>
+			  </Privilege>
+			<Privilege>
+				<Name>FILE_IO</Name>
+				<GroupId>devicegr15</GroupId>
+			</Privilege>
+			<Privilege>
+				<Name>LOCATION</Name>
+				<GroupId>devicegr22</GroupId>
+			  </Privilege>
+    </Privileges>
+    <DeviceProfile>
+        <CPU>ARM</CPU>
+	      <MinimumHeap>20Mbytes</MinimumHeap>
+        <Accelerator3D>OpenGL1.1</Accelerator3D>
+	      <Accelerator3D>OpenGL2.0</Accelerator3D>
+        <BluetoothVersion>1.1</BluetoothVersion>
+	      <WifiVersion>11a</WifiVersion>
+	      <WifiVersion>11b</WifiVersion>
+	      <WifiVersion>11g</WifiVersion>
+	      <Sensor>GPS</Sensor>
+	      <Sensor>Accelerometer</Sensor>
+	      <Sensor>Magnetic</Sensor>
+	      <InputDevice>Qwerty</InputDevice>
+	      <InputDevice>PhoneKeypad</InputDevice>
+	      <InputDevice>Touch</InputDevice>
+	      <InputDevice>MultiTouch</InputDevice>
+	      <ScreenSize>480x800</ScreenSize>
+	      <ScreenSize>240x400</ScreenSize>
+    </DeviceProfile>
+</Manifest>

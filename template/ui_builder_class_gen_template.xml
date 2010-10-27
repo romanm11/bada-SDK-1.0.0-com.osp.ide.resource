@@ -1,0 +1,961 @@
+<xml version="1.0">
+
+	<base>
+		<macro name="$(METHOD_DEF_BODY)">
+			<value>
+				<![CDATA[{
+	// TODO: Add your implementation codes here
+
+}]]>
+			</value>
+		</macro>
+
+		<header>
+			<![CDATA[
+#ifndef $(HEADER_DEF)
+#define $(HEADER_DEF)
+
+#include <FBase.h>
+#include <FUi.h>
+$(INC_USER_DEF_HEADERS)
+
+
+class $(CLASS_NAME) :
+	public Osp::Ui::Controls::Form
+$(LISTENER_IMPL)
+{
+
+// Construction
+public:
+	$(CLASS_NAME)(void);
+	virtual ~$(CLASS_NAME)(void);
+	bool Initialize();
+	result OnInitializing(void);
+	result OnTerminating(void);
+
+// Implementation
+protected:
+
+// Generated call-back functions
+public:
+$(METHOD_DECL)
+};
+
+#endif
+]]>
+		</header>
+
+		<source>
+			<![CDATA[
+#include "$(CLASS_NAME).h"
+
+using namespace Osp::Base;
+using namespace Osp::Ui;
+using namespace Osp::Ui::Controls;
+
+
+$(CLASS_NAME)::$(CLASS_NAME)(void)
+{
+}
+
+$(CLASS_NAME)::~$(CLASS_NAME)(void)
+{
+}
+
+bool
+$(CLASS_NAME)::Initialize()
+{
+	Form::Construct(L"$(FORM_NAME)");
+
+	return true;
+}
+
+result
+$(CLASS_NAME)::OnInitializing(void)
+{
+	result r = E_SUCCESS;
+
+	// TODO: Add your initialization code here
+
+	return r;
+}
+
+result
+$(CLASS_NAME)::OnTerminating(void)
+{
+	result r = E_SUCCESS;
+
+	// TODO: Add your termination code here
+
+	return r;
+}
+
+$(METHOD_DEF)
+]]>
+		</source>
+
+	</base>
+
+	<classes>
+
+		<class name="Control" base_class="Object">
+			<interface>IDragDropEventListener</interface>
+			<interface>IFocusEventListener</interface>
+			<interface>IKeyEventListener</interface>
+			<interface>ITouchEventListener</interface>
+		</class>
+
+		<class name="Container" base_class="Control">
+		</class>
+
+		<class name="Form" base_class="Container">
+			<interface>IActionEventListener</interface>
+			<interface>IOrientationEventListener</interface>
+		</class>
+
+		<class name="Button" base_class="Control">
+			<interface>IActionEventListener</interface>
+		</class>
+
+		<class name="CheckButton" base_class="Control">
+			<interface>IActionEventListener</interface>
+		</class>
+
+		<class name="ColorPicker" base_class="Control">
+			<interface>IColorChangeEventListener</interface>
+		</class>
+
+		<class name="CustomList" base_class="Control">
+			<interface>ICustomItemEventListener</interface>
+		</class>
+
+		<class name="EditArea" base_class="Control">
+			<interface>IActionEventListener</interface>
+			<interface>IScrollPanelEventListener</interface>
+			<interface>ITextEventListener</interface>
+		</class>
+
+		<class name="EditDate" base_class="Control">
+			<interface>IDateChangeEventListener</interface>
+		</class>
+
+		<class name="EditField" base_class="Control">
+			<interface>IActionEventListener</interface>
+			<interface>IScrollPanelEventListener</interface>
+			<interface>ITextEventListener</interface>
+		</class>
+
+		<class name="EditTime" base_class="Control">
+			<interface>ITimeChangeEventListener</interface>
+		</class>
+
+		<class name="ExpandableList" base_class="Control">
+			<interface>IExpandableItemEventListener</interface>
+		</class>
+
+		<class name="Flash" base_class="Control">
+			<interface>IFlashEventListener</interface>
+		</class>
+
+		<class name="GroupedList" base_class="Control">
+			<interface>IFastScrollEventListener</interface>
+			<interface>IGroupedItemEventListener</interface>
+		</class>
+
+		<class name="IconList" base_class="Control">
+			<interface>IItemEventListener</interface>
+		</class>
+
+		<class name="Label" base_class="Control">
+		</class>
+
+		<class name="List" base_class="Control">
+			<interface>IItemEventListener</interface>
+		</class>
+
+		<class name="OverlayPanel" base_class="Panel">
+		</class>
+
+		<class name="Panel" base_class="Container">
+		</class>
+
+		<class name="Progress" base_class="Control">
+		</class>
+
+		<class name="ScrollPanel" base_class="Panel">
+		</class>
+
+		<class name="SlidableGroupedList" base_class="Control">
+			<interface>IFastScrollEventListener</interface>
+			<interface>IGroupedItemEventListener</interface>
+			<interface>ISlidableGroupedListEventListener</interface>
+		</class>
+
+		<class name="SlidableList" base_class="Control">
+			<interface>ICustomItemEventListener</interface>
+			<interface>ISlidableListEventListener</interface>
+		</class>
+
+		<class name="Slider" base_class="Control">
+			<interface>IAdjustmentEventListener</interface>
+		</class>
+
+	</classes>
+
+	<interfaces>
+
+		<interface name="IDragDropEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnTouchDragged(const Osp::Ui::Control&, const Osp::Graphics::Point&, const Osp::Graphics::Point&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnTouchDropped(const Osp::Ui::Control&, const Osp::Graphics::Point&, const Osp::Graphics::Point&);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTouchDragged(const Control &source, const Osp::Graphics::Point &startPosition, const Osp::Graphics::Point &currentPosition)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTouchDropped(const Control &source, const Osp::Graphics::Point &startPosition, const Osp::Graphics::Point &currentPosition)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IFocusEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnFocusGained(const Osp::Ui::Control&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnFocusLost(const Osp::Ui::Control&);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnFocusGained(const Control &source)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnFocusLost(const Control &source)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IKeyEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnKeyLongPressed(const Osp::Ui::Control&, Osp::Ui::KeyCode);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnKeyPressed(const Osp::Ui::Control&, Osp::Ui::KeyCode);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnKeyReleased(const Osp::Ui::Control&, Osp::Ui::KeyCode);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnKeyLongPressed(const Control &source, KeyCode keyCode)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnKeyPressed(const Control &source, KeyCode keyCode)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnKeyReleased(const Control &source, KeyCode keyCode)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+
+		<interface name="ITouchEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnTouchDoublePressed(const Osp::Ui::Control&, const Osp::Graphics::Point&, const Osp::Ui::TouchEventInfo&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnTouchFocusIn(const Osp::Ui::Control&, const Osp::Graphics::Point&, const Osp::Ui::TouchEventInfo&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnTouchFocusOut(const Osp::Ui::Control&, const Osp::Graphics::Point&, const Osp::Ui::TouchEventInfo&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnTouchLongPressed(const Osp::Ui::Control&, const Osp::Graphics::Point&, const Osp::Ui::TouchEventInfo&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnTouchMoved(const Osp::Ui::Control&, const Osp::Graphics::Point&, const Osp::Ui::TouchEventInfo&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnTouchPressed(const Osp::Ui::Control&, const Osp::Graphics::Point&, const Osp::Ui::TouchEventInfo&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnTouchReleased(const Osp::Ui::Control&, const Osp::Graphics::Point&, const Osp::Ui::TouchEventInfo&);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTouchDoublePressed(const Control &source, const Osp::Graphics::Point &currentPosition, const TouchEventInfo &touchInfo)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTouchFocusIn(const Control &source, const Osp::Graphics::Point &currentPosition, const TouchEventInfo &touchInfo)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTouchFocusOut(const Control &source, const Osp::Graphics::Point &currentPosition, const TouchEventInfo &touchInfo)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTouchLongPressed(const Control &source, const Osp::Graphics::Point &currentPosition, const TouchEventInfo &touchInfo)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTouchMoved(const Control &source, const Osp::Graphics::Point &currentPosition, const TouchEventInfo &touchInfo)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTouchPressed(const Control &source, const Osp::Graphics::Point &currentPosition, const TouchEventInfo &touchInfo)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTouchReleased(const Control &source, const Osp::Graphics::Point &currentPosition, const TouchEventInfo &touchInfo)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IActionEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnActionPerformed(const Osp::Ui::Control&, int);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnActionPerformed(const Control& source, int actionId)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IOrientationEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnOrientationChanged(const Osp::Ui::Control&, Osp::Ui::OrientationStatus);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnOrientationChanged(const Control &source, OrientationStatus orientationStatus)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IColorChangeEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnColorChanged(const Osp::Ui::Control&, const Osp::Graphics::Color&);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnColorChanged(const Control &source, const Osp::Graphics::Color &color)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="ICustomItemEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnItemStateChanged(const Osp::Ui::Control&, int, int, int, Osp::Ui::ItemStatus);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnItemStateChanged(const Osp::Ui::Control&, int, int, Osp::Ui::ItemStatus);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnItemStateChanged(const Control &source, int index, int itemId, int elementId, ItemStatus status)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnItemStateChanged(const Control &source, int index, int itemId, ItemStatus status)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IDateChangeEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnDateChangeCanceled(const Osp::Ui::Control&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnDateChanged(const Osp::Ui::Control&, int, int, int);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnDateChangeCanceled(const Control &source)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnDateChanged(const Control &source, int year, int month, int day)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IScrollPanelEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnOtherControlSelected(const Osp::Ui::Control&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnOverlayControlClosed(const Osp::Ui::Control&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnOverlayControlCreated(const Osp::Ui::Control&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnOverlayControlOpened(const Osp::Ui::Control&);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnOtherControlSelected(const Control &source)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnOverlayControlClosed(const Control &source)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnOverlayControlCreated(const Control &source)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnOverlayControlOpened(const Control &source)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IExpandableItemEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnItemStateChanged(const Osp::Ui::Control&, int, int, int, int, Osp::Ui::ItemStatus);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnItemStateChanged(const Osp::Ui::Control&, int, int, int, Osp::Ui::ItemStatus);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnItemStateChanged(const Control &source, int mainIndex, int subIndex, int itemId, int elementId, ItemStatus status)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnItemStateChanged(const Control &source, int mainIndex, int subIndex, int itemId, ItemStatus status)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="ITextEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnTextValueChangeCanceled(const Osp::Ui::Control&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnTextValueChanged(const Osp::Ui::Control&);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTextValueChangeCanceled(const Control &source)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTextValueChanged(const Control &source)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IExpandableItemEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnItemStateChanged(const Osp::Ui::Control&, int, int, int, int, Osp::Ui::ItemStatus);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnItemStateChanged(const Osp::Ui::Control&, int, int, int, Osp::Ui::ItemStatus);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnItemStateChanged(const Control &source, int mainIndex, int subIndex, int itemId, int elementId, ItemStatus status)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnItemStateChanged(const Control &source, int mainIndex, int subIndex, int itemId, ItemStatus status)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IFlashEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnFlashDataReceived(const Osp::Ui::Control&, const Osp::Base::Collection::IList&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnFlashDataReturned(const Osp::Ui::Control&, const Osp::Base::Collection::IList&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnFlashLayoutChanged(const Osp::Ui::Control&, Osp::Ui::FlashLayoutStyle);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnFlashTextEntered(const Osp::Ui::Control&, Osp::Ui::FlashTextInputMode, const Osp::Base::String&, int);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnFlashDataReceived(const Control &source, const Osp::Base::Collection::IList &paramList)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnFlashDataReturned(const Control &source, const Osp::Base::Collection::IList &paramList)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnFlashLayoutChanged(const Control &source, FlashLayoutStyle layoutStyle)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnFlashTextEntered(const Control &source, FlashTextInputMode inputMode, const String &defaultText, int limitTextLength)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IItemEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnItemStateChanged(const Osp::Ui::Control&, int, int, Osp::Ui::ItemStatus);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnItemStateChanged(const Control &source, int index, int itemId, ItemStatus status)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IFastScrollEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnMainIndexChanged(const Osp::Ui::Control&, Osp::Base::Character&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnMainIndexSelected(const Osp::Ui::Control&, Osp::Base::Character&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnSubIndexChanged(const Osp::Ui::Control&, Osp::Base::Character&, Osp::Base::Character&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnSubIndexSelected(const Osp::Ui::Control&, Osp::Base::Character&, Osp::Base::Character&);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnMainIndexChanged(const Control &source, Character &mainIndex)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnMainIndexSelected(const Control &source, Character &mainIndex)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnSubIndexChanged(const Control &source, Character &mainIndex, Character &subIndex)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnSubIndexSelected(const Control &source, Character &mainIndex, Character &subIndex)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IGroupedItemEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnItemStateChanged(const Osp::Ui::Control&, int, int, int, Osp::Ui::ItemStatus);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnItemStateChanged(const Osp::Ui::Control&, int, int, int, int, Osp::Ui::ItemStatus);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnItemStateChanged(const Control &source, int groupIndex, int itemIndex, int itemId, ItemStatus status)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnItemStateChanged(const Control &source, int groupIndex, int itemIndex, int itemId, int elementId, ItemStatus status)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="ISlidableGroupedListEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnListPropertyRequested(const Osp::Ui::Control&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnLoadToBottomRequested(const Osp::Ui::Control&, int, int, int);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnLoadToTopRequested(const Osp::Ui::Control&, int, int, int);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnUnloadItemRequested(const Osp::Ui::Control&, int, int);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnListPropertyRequested(const Control &source)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnLoadToBottomRequested(const Control &source, int groupIndex, int itemIndex, int numItems)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnLoadToTopRequested(const Control &source, int groupIndex, int itemIndex, int numItems)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnUnloadItemRequested(const Control  &source, int groupIndex, int itemIndex)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="ISlidableListEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnListPropertyRequested(const Osp::Ui::Control&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnLoadToBottomRequested(const Osp::Ui::Control&, int, int);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnLoadToTopRequested(const Osp::Ui::Control&, int, int);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnUnloadItemRequested(const Osp::Ui::Control&, int);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnListPropertyRequested(const Control &source)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnLoadToBottomRequested(const Control &source, int index, int numItems)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnLoadToTopRequested(const Control &source, int index, int numItems)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnUnloadItemRequested(const Control  &source, int index)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="IAdjustmentEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnAdjustmentValueChanged(const Osp::Ui::Control&, int);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnAdjustmentValueChanged(const Control &source, int adjustment)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+		<interface name="ITimeChangeEventListener">
+			<scope>Osp::Ui</scope>
+			<header>
+				<method>
+					<![CDATA[
+	void OnTimeChangeCanceled(const Osp::Ui::Control&);]]>
+				</method>
+				<method>
+					<![CDATA[
+	void OnTimeChanged(const Osp::Ui::Control&, int, int);]]>
+				</method>
+			</header>
+			<source>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTimeChangeCanceled(const Control &source)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+				<method>
+					<![CDATA[
+void
+$(CLASS_NAME)::OnTimeChanged(const Control &source, int hour, int minute)
+$(METHOD_DEF_BODY)
+]]>
+				</method>
+			</source>
+		</interface>
+
+	</interfaces>
+
+</xml>

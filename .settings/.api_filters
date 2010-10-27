@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="com.osp.ide.resource" version="2">
+    <resource path="src/com/osp/ide/resource/common/FramePropertyPage.java" type="com.osp.ide.resource.common.FramePropertyPage">
+        <filter id="571473929">
+            <message_arguments>
+                <message_argument value="PropertySheetPage"/>
+                <message_argument value="FramePropertyPage"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/com/osp/ide/resource/common/GridComboContribution.java" type="com.osp.ide.resource.common.GridComboContribution">
+        <filter id="574619656">
+            <message_arguments>
+                <message_argument value="IContributionItem"/>
+                <message_argument value="GridComboContribution"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/com/osp/ide/resource/common/ModeComboContribution.java" type="com.osp.ide.resource.common.ModeComboContribution">
+        <filter id="574619656">
+            <message_arguments>
+                <message_argument value="IContributionItem"/>
+                <message_argument value="ModeComboContribution"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/com/osp/ide/resource/resourceexplorer/ResourcePropertyPage.java" type="com.osp.ide.resource.resourceexplorer.ResourcePropertyPage">
+        <filter id="571473929">
+            <message_arguments>
+                <message_argument value="PropertySheetPage"/>
+                <message_argument value="ResourcePropertyPage"/>
+            </message_arguments>
+        </filter>
+    </resource>
+</component>

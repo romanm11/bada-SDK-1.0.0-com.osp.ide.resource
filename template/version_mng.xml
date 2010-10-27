@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<VersionMng>	
+	<DVersion version="2" >
+		<tag name="Form" op="NONE" value="" >
+			<property name="titleAlign" op="ADD" value="ALIGN_LEFT"/>
+		</tag>
+		<tag name="DatePicker" op="MODIFY" value="EditDate" />
+		<tag name="TimePicker" op="MODIFY" value="EditTime" />
+		<tag name="CustomList" op="NONE" value="" >
+			<property name="itemDivider" op="ADD" value="TRUE"/>
+		</tag>
+		<tag name="ExpandableList" op="NONE" value="" >
+			<property name="itemDivider" op="ADD" value="TRUE"/>
+		</tag>
+		<tag name="SlidableGroupedList" op="NONE" value="" >
+			<property name="itemDivider" op="ADD" value="TRUE"/>
+			<property name="fastScroll" op="ADD" value="TRUE"/>
+		</tag>
+		<tag name="Popup" op="NONE" value="" >
+			<property name="bitmap" op="DELETE" value=""/>
+		</tag>
+		<tag name="GroupedList" op="NONE" value="" >
+			<property name="itemDivider" op="ADD" value="TRUE"/>
+			<property name="fastScroll" op="ADD" value="TRUE"/>
+		</tag>
+		<tag name="SlidableList" op="NONE" value="" >
+			<property name="itemDivider" op="ADD" value="TRUE"/>
+		</tag>
+		<tag name="List" op="NONE" value="" >
+			<property name="line1Height" op="MODIFY" value="row1Height"/>
+			<property name="line2Height" op="MODIFY" value="row2Height"/>
+			<property name="colume1Width" op="ADD" value="0"/>
+			<property name="colume2Width" op="ADD" value="0"/>
+			<layout name="" op="NONE"/>
+		</tag>
+		<tag name="Slider" op="NONE" value="" >
+			<property name="stepSize" op="DELETE" value=""/>
+			<property name="titleText" op="ADD" value=""/>
+			<property name="bShowTitleText" op="ADD" value="TRUE"/>			
+		</tag>
+		<tag name="Button" op="NONE" value="" >
+			<property name="NormalBitmapX" op="DELETE" value=""/>
+			<property name="NormalBitmapY" op="DELETE" value=""/>
+			<property name="PressedBitmapX" op="DELETE" value=""/>
+			<property name="PressedBitmapY" op="DELETE" value=""/>
+			<property name="DisabledBitmapX" op="DELETE" value=""/>
+			<property name="DisabledBitmapY" op="DELETE" value=""/>
+		</tag>
+		<tag name="CheckButton" op="NONE" value="" >
+			<property name="titleText" op="ADD" value=""/>
+			<property name="bShowTitleText" op="ADD" value="TRUE"/>
+		</tag>
+		<tag name="EditField" op="NONE" value="" >
+			<property name="bShowTitleText" op="ADD" value="TRUE"/>
+			<property name="bKeypadEnabled" op="ADD" value="TRUE"/>
+		</tag>
+	</DVersion>
+	<DVersion version="3" >
+		<tag name="EditField" op="NONE" value="" >
+			<property name="bKeypadEnabled" op="MODIFY" value="Enabled"/>
+		</tag>
+	</DVersion>
+	<DVersion version="20100701" >
+		<tag name="EditField" op="NONE" value="" >
+			<property name="KeypadEnabled" op="ADD" value="TRUE"/>			
+		</tag>
+	</DVersion>
+</VersionMng>	
+

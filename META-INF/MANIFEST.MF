@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: bada IDE UIBuilder Plug-in
+Bundle-SymbolicName: com.osp.ide.resource;singleton:=true
+Bundle-Version: 1.0.0.v20100816
+Bundle-Activator: com.osp.ide.resource.Activator
+Bundle-Vendor: Samsung Electronics
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.views;bundle-version="3.3.0",
+ org.eclipse.gef;bundle-version="3.4.1",
+ org.eclipse.ui.navigator;bundle-version="3.3.101",
+ org.eclipse.ui.ide,
+ org.eclipse.core.resources,
+ org.eclipse.cdt.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.cdt.core.model,
+ org.eclipse.cdt.internal.ui,
+ org.eclipse.cdt.ui,
+ org.eclipse.core.filesystem,
+ org.eclipse.core.resources,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors.text,
+ org.eclipse.ui.navigator.resources,
+ org.eclipse.ui.part,
+ org.eclipse.ui.texteditor
+Bundle-ClassPath: .,
+ lib/jxl.jar,
+ lib/poi-3.6-20091214.jar,
+ lib/poi-ooxml-3.6-20091214.jar,
+ lib/xmlbeans-2.3.0.jar,
+ lib/poi-ooxml-schemas-3.6-20091214.jar,
+ lib/dom4j-1.6.1.jar
