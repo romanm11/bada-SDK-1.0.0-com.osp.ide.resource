@@ -348,12 +348,12 @@ public class TreeObject implements IAdaptable, IPropertySource {
 					&& nKind == ResourceExplorer.KIND_FORM) {
 				file = new File(((FORMFRAME_INFO) info).fileName);
 				parent = new File(file.getParent());
-				return parent.getName() + "\\" + file.getName();
+				return parent.getName() + java.io.File.separatorChar + file.getName();
 			} else if (nDepth == ResourceExplorer.DEPTH_TABLE
 					&& nKind == ResourceExplorer.KIND_POPUP) {
 				file = new File(((POPUPFRAME_INFO) info).fileName);
 				parent = new File(file.getParent());
-				return parent.getName() + "\\" + file.getName();
+				return parent.getName() + java.io.File.separatorChar + file.getName();
 			}
 		}
 		return null;

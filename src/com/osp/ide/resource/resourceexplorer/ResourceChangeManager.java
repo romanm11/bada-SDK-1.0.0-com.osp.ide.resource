@@ -415,7 +415,7 @@ class ResourceDeltaVisitor implements IResourceDeltaVisitor {
 		if(view == null)
 			return;
 		String resPath = file.getProject().getLocation().toOSString() + view.getResourceDir();
-		String fileResPath = file.getParent().getParent().getLocation().toOSString() + "\\";
+		String fileResPath = file.getParent().getParent().getLocation().toOSString() + java.io.File.separatorChar;
 		if(!fileResPath.equals(resPath) || !file.getProject().isOpen())
 			return;
 		
@@ -463,7 +463,7 @@ class ResourceDeltaVisitor implements IResourceDeltaVisitor {
 			return;
 
 		String resPath = file.getProject().getLocation().toOSString() + view.getResourceDir();
-		String fileResPath = file.getParent().getParent().getLocation().toOSString() + "\\";
+		String fileResPath = file.getParent().getParent().getLocation().toOSString() + java.io.File.separatorChar;
 		if(!fileResPath.equals(resPath))
 			return;
 		
@@ -508,9 +508,9 @@ class ResourceDeltaVisitor implements IResourceDeltaVisitor {
 						return;
 					if (isTWFormXML(file) || isTWPopupXML(file)) {
 						if (isTWFormXML(file)) {
-							view.manager.AddScene(screen, dir.getAbsolutePath() + "\\" + file.getName());
+							view.manager.AddScene(screen, dir.getAbsolutePath() + java.io.File.separatorChar + file.getName());
 						} else {
-							view.manager.AddPopup(screen, dir.getAbsolutePath() + "\\" + file.getName());
+							view.manager.AddPopup(screen, dir.getAbsolutePath() + java.io.File.separatorChar + file.getName());
 						}
 
 						view.refreshTree();

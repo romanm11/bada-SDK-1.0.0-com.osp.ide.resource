@@ -746,7 +746,7 @@ public class OspResourceManager implements FrameConst {
 
         String id = MakeFrameID(screen);
 
-        String fileName = m_projectDirectory + screen + "/";
+        String fileName = m_projectDirectory + screen + java.io.File.separatorChar;
         File file = new File(fileName);
         if (!file.exists())
             file.mkdir();

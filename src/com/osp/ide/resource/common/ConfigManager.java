@@ -80,7 +80,7 @@ public class ConfigManager implements FrameConst {
 
 	public ConfigManager(String sImgPath) {
 		String osPath = sImgPath;
-		osPath += "\\." + ELEMENT_NAME;
+		osPath += java.io.File.separatorChar + "." + ELEMENT_NAME;
 		IPath path = Path.fromPortableString(osPath);
 		this.file = path.toFile();
 

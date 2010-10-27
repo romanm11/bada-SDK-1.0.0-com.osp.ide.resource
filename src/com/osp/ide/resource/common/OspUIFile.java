@@ -15,13 +15,14 @@ public class OspUIFile {
 		String s;
 		File fDir;
 
-		if (dir.charAt(dir.length() - 1) != '\\')
-			dir += '\\';
+		if (dir.charAt(dir.length() - 1) != java.io.File.separatorChar)
+			dir += java.io.File.separatorChar;
 
 		// System.out.println("Dir : "+dir);
 		int j = dir.indexOf(":\\") + 2;
 		int i;
 
+	// TODO implement
 		while ((i = dir.indexOf('\\', j)) > -1) {
 			s = dir.substring(0, i);
 			// System.out.println("Create Dir : "+s+", j : "+j+", i : "+i);
@@ -262,7 +263,7 @@ public class OspUIFile {
 
 		if (IsFileExist(pathname.s))
 			do {
-				pathname.s = String.format("%s\\%s%d.%s", dir, title, i++, ext);
+				pathname.s = String.format("%s" + java.io.File.separatorChar + "%s%d.%s", dir, title, i++, ext);
 			} while (IsFileExist(pathname.s));
 	};
 

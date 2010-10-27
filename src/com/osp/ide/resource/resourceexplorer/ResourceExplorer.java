@@ -207,7 +207,7 @@ public class ResourceExplorer extends ViewPart implements ISaveablePart2 {
     private Action importStringAction;
     
 	private ToolBarManager resourceToolbar;
-	private String resDir = "\\Res\\";
+	private String resDir = java.io.File.separatorChar + "Res" + java.io.File.separatorChar;
 
 	/**
 	 * 
@@ -250,9 +250,9 @@ public class ResourceExplorer extends ViewPart implements ISaveablePart2 {
 			if(files[i] != null && files[i].isDirectory()) {
 				String name = files[i].getName();
 				if(name.toLowerCase(Locale.getDefault()).equals("res")) {
-					s = new StringBuilder("\\");
+					s = new StringBuilder(java.io.File.separator);
 					s.append(name);
-					s.append("\\");
+					s.append(java.io.File.separatorChar);
 					return s.toString();
 				}
 			}
@@ -1505,7 +1505,7 @@ public class ResourceExplorer extends ViewPart implements ISaveablePart2 {
 							.getProject(curProject);
 					if (project == null)
 						return;
-					String resDir = project.getLocation().toString() + "\\."
+					String resDir = project.getLocation().toString() + java.io.File.separatorChar + "."
 							+ id;
 					file = new File(resDir);
 					if (file.exists())
